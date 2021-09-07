@@ -1,0 +1,142 @@
+@import "./utils/_variables";
+@import "./utils/_mixins";
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  color: $black;
+  background: $white;
+
+  .cont {
+    .heading {
+      font-family: "PT Serif", serif;
+      margin-left: 12px;
+      margin-top: 71px;
+      margin-bottom: 38px;
+    }
+    &-sub {
+      h4 {
+        margin-left: 12px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        margin: 12px;
+      }
+    }
+
+    @include breakpoint-up(large) {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      .heading {
+        width: 278px;
+        height: 47px;
+        margin-top: 110px;
+        margin-left: 243px;
+        margin-right: 215px;
+        line-height: 48px;
+        letter-spacing: -0.045em;
+        font-size: 36px;
+      }
+
+      h4 {
+        margin-top: 110px;
+        margin-right: 587px;
+        margin-right: 215px;
+        font-size: 18px;
+        line-height: 27px;
+        text-transform: uppercase;
+      }
+
+      p {
+        width: 439px;
+        height: 87px;
+        font-size: 18px;
+        line-height: 27px;
+      }
+    }
+  }
+  ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 22.8px;
+    padding: 0;
+
+    @include breakpoint-up(large) {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 56.64px;
+      margin-top: 96px;
+      justify-items: center;
+    }
+
+    .item-2 {
+      margin-top: 80.52px;
+    }
+
+    .item-3,
+    .item-5 {
+      margin-top: -80.52px;
+    }
+    @include breakpoint-up(large) {
+      .item-2,
+      .item-5 {
+        margin-top: 80.52px;
+      }
+
+      .item-3 {
+        margin-top: 0;
+      }
+    }
+    .item {
+      display: flex;
+      margin-left: 16px;
+      margin-right: 16px;
+
+      &__desig {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        margin: 0 0 0 6.28px;
+        font-size: 10px;
+      }
+
+      &__pname {
+        &__img {
+          width: 138.72px;
+          height: 209px;
+          @include breakpoint-up(large) {
+            width: 238px;
+            height: 341px;
+          }
+        }
+        &__name {
+          margin-top: 10px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .foo {
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: $light-gray;
+  }
+}
